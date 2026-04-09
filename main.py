@@ -1,16 +1,14 @@
-# This is our main application file
-# It defines a simple function and runs it
+# Import Flask to create a web application
+from flask import Flask
 
-# A function that takes two numbers and returns their sum
-def add(a, b):
-    return a + b
+# Create the Flask app instance
+app = Flask(__name__)
 
-# Print a greeting message to the console
-print("Hello, World!")
+# Define the home route - what shows when you visit the site
+@app.route('/')
+def home():
+    return "Hello, World! My app is deployed!"
 
-# Call the add function and print the result
-print("2 + 3 =", add(2, 3))
-
-print("This line was added on feature-branch")
-
-print("Conflict resolved - final version")
+# Run the app
+if __name__ == '__main__':
+    app.run()
